@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jamile Silva">
+    <meta name="keyworks" content="contato">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contato</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    min-height: 100%vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+   background-color: #272a37;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+form{
+    width: 100%;
+    max-width: 30rem;
+}
+label,input,textarea{
+display: block;
+}
+label,input,textarea{
+width: 100%;
+font: inherit;
+padding: 1.25rem;
+font-weight: 700;
+}
+input,textarea{
+    margin-bottom: 1rem;
+    color: white;
+    background: #323644;
+    border: 0.125rem solid transparent;
+    border-radius: 1.125rem;
+    transition: border-color 0.3s;
+    box-shadow: 0.3s;
+}
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus{
+    outline: none;
+    border-color: #1d90f5;
+    box-shadow: 0 0 0 0.3125rem;
+}
+label{
+    margin-bottom: 0.5rem;
+    color:white;
+}
+textarea{
+    min-height: 12.5rem;
+    resize: vertical;
+}
+button{
+    border-radius: 99px;
+    color: white; 
+    background:#1d90f5 ;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+button{
+    width: 10em;
+}
+button:focus{
+    outline: none;
+    background: #1c70d3;
+}
+button:disabled{
+    cursor:not-allowed;
+}
+    </style>
+</head>
+<body>
+        <div class="contato" id="contato">
+            <form>
+               
+        <label for="name">Nome</label>
+        <input type="text" name="nome" id="nome" required/>
+        <label for="e-mail">e-mail</label>
+        <input type="text" e-mail="e-mail" id="e-mail" required/>
+        <label for="mensagem">mensagem</label>
+        <textarea name="mensagem" id="mensagem"required ></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+        </div>
+        <script src="">
+            class formsubmit{
+    constructor(settings){
+        this.settings=settings;
+        this.form=document.querySelector(settings.form);
+        this.formbutton=document.querySelector(settings.formbutton);
+        if(this.form){
+            this.url=this.form.getAttribute("action");
+        }
+    }
+}
+displaysuccess(){
+this.form.innerHTML=this.settings.success;
+}
+displayerror() {
+this.form.innerHTML=this.settings.console.error;
+}
+
+Init(){
+    if(this.form)this.formbutton.addEventlistener("click",()=> this.displaysuccess());
+    return this;
+}
+
+const formsubmit= new formsubmit({
+    Form:"[data-form]",
+    button:"[data-button]",
+success:"<h1 class= success>mensagem enviada!</h1>",
+error:"<h1 class= error>Não foi possível enviar sua mensagem.</h1>"
+}
+)
+        </script>
+
+</body>
+</html>
